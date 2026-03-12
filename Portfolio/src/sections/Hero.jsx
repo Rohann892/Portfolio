@@ -9,7 +9,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import rohan from "../assets/rohan.jpeg";
+import rohan from "../assets/rohan1.png";
 
 const skills = [
   "React",
