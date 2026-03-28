@@ -42,7 +42,7 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <div
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
@@ -117,13 +117,13 @@ export const Hero = () => {
             </div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
+          <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
                   src={rohan}
-                  alt="Pedro Machado"
+                  alt="Rohan lal"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
 
