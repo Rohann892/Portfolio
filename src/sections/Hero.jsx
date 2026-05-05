@@ -9,7 +9,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import rohan from "../assets/rohan1.png";
+import rohan from "../assets/rohan1.jpeg";
 
 const skills = [
   "React",
@@ -138,9 +138,9 @@ export const Hero = () => {
                 </div>
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-2xl font-bold text-primary">5+</div>
                   <div className="text-xs text-muted-foreground">
-                    Month Exp.
+                    Months Exp.
                   </div>
                 </div>
               </div>

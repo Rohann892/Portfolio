@@ -4,40 +4,21 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const projects = [
   {
-    title: "Fintech Dashboard",
-    description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
-    link: "#",
-    github: "#",
+    title: "Animated Website",
+    description: "An animated website with smooth animations and transitions.",
+    image: "/projects/foodDelivery.jpeg",
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
+    link: "https://food-delivery-seven-livid.vercel.app/",
+    github: "https://github.com/Rohann892/Food-Delivery",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Food Delivery Website",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "AI Writing Assistant",
-    description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
+      "A full-featured food delivery solution with inventory management, payment processing, and analytics dashboard.",
+    image: "/projects/animated.jpeg",
+    tags: ["ReactJs", "RazorPay", "NodeJs", "MongoDb", "NodeJs"],
+    link: "https://landing-page-for-it-company-rho.vercel.app/",
+    github: "https://github.com/Rohann892/Animated-UI-website",
   },
 ];
 

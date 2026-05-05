@@ -12,7 +12,7 @@ const highlights = [
     icon: Rocket,
     title: "Performance",
     description:
-      "Optimizing for speed and deliveringl lightining-fast user expeeriences.",
+      "Optimizing for speed and delivering lightning-fast user experiences.",
   },
   {
     icon: Users,
@@ -50,29 +50,32 @@ const About = () => {
             {/* description about your  */}
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                veritatis officiis voluptas et fugit perspiciatis obcaecati,
-                perferendis voluptate molestiae, totam, consectetur assumenda?
-                Beatae, maxime odit explicabo laborum dolor suscipit pariatur!
+                I am a passionate software developer and currently a student at
+                Jadavpur University. With a strong foundation in computer
+                science and 3 months of professional experience, I am dedicated
+                to building modern, user-centric web applications that solve
+                real-world problems.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                veritatis officiis voluptas et fugit perspiciatis obcaecati,
-                perferendis voluptate molestiae, totam, consectetur assumenda?
-                Beatae, maxime odit explicabo laborum dolor suscipit pariatur!
+                During my journey so far, I have been honing my skills in
+                frontend technologies like React and Tailwind CSS. I am deeply
+                interested in creating seamless digital experiences and am
+                always eager to learn new frameworks and best practices to
+                improve my craft.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                veritatis officiis voluptas et fugit perspiciatis obcaecati,
-                perferendis voluptate molestiae, totam, consectetur assumenda?
-                Beatae, maxime odit explicabo laborum dolor suscipit pariatur!
+                My mission is to leverage my academic background and hands-on
+                experience to build functional and aesthetically pleasing
+                digital products. I believe in continuous learning and am
+                excited to contribute to innovative projects while growing as a
+                developer.
               </p>
             </div>
             {/* mission */}
             <div className="glass p-6 rounded-2xl border glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experience that are not just
-                functional, but truly delighted -- products that users love to
+                "My mission is to create digital experiences that are not just
+                functional, but truly delightful — products that users love to
                 use and developers love to maintain"
               </p>
             </div>

@@ -2,41 +2,33 @@ import React from "react";
 
 const experiences = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend Engineer",
-    company: "Tech Innovators Inc.",
+    period: "2024 — Present",
+    role: "Web Development Intern",
+    company: "Tech Solutions",
     description:
-      "Leading frontend architecture for a suite of fintech products. Implemented micro-frontend architecture, reduced bundle size by 40%, and mentored a team of 5 developers.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+      "Contributing to the development of responsive web interfaces using React and Tailwind CSS. Working on optimizing site performance and collaborating with the design team to implement new features.",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Git"],
     current: true,
   },
   {
-    period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Digital Solutions Co.",
+    period: "2023 — 2024",
+    role: "Open Source Contributor",
+    company: "GitHub Community",
     description:
-      "Built and maintained multiple React applications for enterprise clients. Introduced automated testing practices that improved code coverage to 85%.",
-    technologies: ["React", "Redux", "Jest", "Cypress"],
+      "Actively contributing to various open-source projects, focusing on bug fixes and UI improvements. Gained experience in collaborative development and version control.",
+    technologies: ["JavaScript", "HTML", "CSS", "Git"],
     current: false,
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Developer",
-    company: "StartUp Labs",
+    period: "2022 — Present",
+    role: "Computer Science Student",
+    company: "Jadavpur University",
     description:
-      "Contributed to the development of a SaaS platform from MVP to production. Collaborated with designers to implement pixel-perfect UI components.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      "Pursuing a degree in Computer Science, focusing on data structures, algorithms, and web development fundamentals.",
+    technologies: ["C", "C++", "Python", "Data Structures"],
     current: false,
   },
-  {
-    period: "2018 — 2019",
-    role: "Freelance Developer",
-    company: "Self-Employed",
-    description:
-      "Delivered custom web solutions for small businesses and startups. Built 15+ websites and applications, handling everything from design to deployment.",
-    technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
-    current: false,
-  },
+
 ];
 
 const Experience = () => {
