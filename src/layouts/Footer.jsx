@@ -1,13 +1,12 @@
 import { Github, Linkedin, Twitter, Heart } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
+  { icon: Github, href: "https://github.com/Adarsh7580", label: "GitHub" },
   {
     icon: Linkedin,
-    href: "https://www.linkedin.com/in/rohan-lal-633951301/",
+    href: "https://www.linkedin.com/in/adarsh-singh-432b7835a/",
     label: "LinkedIn",
   },
-  { icon: Twitter, href: "#", label: "Twitter" },
 ];
 
 const footerLinks = [
@@ -27,10 +26,10 @@ export const Footer = () => {
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <a href="#" className="text-xl font-bold tracking-tight">
-              RL<span className="text-primary">.</span>
+              AS<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Rohan Lal. All rights reserved.
+              © {currentYear} Adarsh Singh. All rights reserved.
             </p>
           </div>
 

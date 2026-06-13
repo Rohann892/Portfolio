@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../components/Button";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const navlinks = [
-  { href: "#about", label: "About" },
-  { href: "#Project", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#testimonial", label: "Testimonial" },
+  { href: "/about", label: "About" },
+  { href: "/Project", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/testimonial", label: "Testimonial" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+
+  const scrollToContact = () => {
+    setOpen(false);
+    // If we're not on the home page, navigate home first then scroll
+    const contact = document.getElementById("contact");
+    if (contact) {
+      contact.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +45,7 @@ const Navbar = () => {
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          RL <span className="text-primary">.</span>
+          AS <span className="text-primary">.</span>
         </a>
 
         {/* desktop view */}
@@ -48,7 +64,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button size="sm" onClick={scrollToContact}>Contact Me</Button>
         </div>
 
         <button
@@ -73,7 +89,7 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" onClick={() => setOpen(false)}>
+            <Button size="sm" onClick={scrollToContact}>
               Contact Me
             </Button>
           </div>

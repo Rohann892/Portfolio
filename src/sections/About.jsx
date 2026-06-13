@@ -50,25 +50,19 @@ const About = () => {
             {/* description about your  */}
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I am a passionate software developer and currently a student at
-                Jadavpur University. With a strong foundation in computer
-                science and 3 months of professional experience, I am dedicated
-                to building modern, user-centric web applications that solve
-                real-world problems.
+                Hi, I'm Adarsh Singh - a Computer Science student with a strong
+                passion for building real-world, scalable web applications.
               </p>
               <p>
-                During my journey so far, I have been honing my skills in
-                frontend technologies like React and Tailwind CSS. I am deeply
-                interested in creating seamless digital experiences and am
-                always eager to learn new frameworks and best practices to
-                improve my craft.
+                I believe technology should not just work, but solve meaningful
+                problems efficiently. From designing intuitive user interfaces
+                to building structured backend systems, I enjoy turning complex
+                ideas into simple and powerful digital solutions.
               </p>
               <p>
-                My mission is to leverage my academic background and hands-on
-                experience to build functional and aesthetically pleasing
-                digital products. I believe in continuous learning and am
-                excited to contribute to innovative projects while growing as a
-                developer.
+                I am driven by curiosity, consistency, and the desire to grow as
+                a software engineer who builds impactful products. Every day, I
+                challenge myself to learn something new and apply it
               </p>
             </div>
             {/* mission */}

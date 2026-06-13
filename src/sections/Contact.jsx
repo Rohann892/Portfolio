@@ -14,19 +14,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "lalrohan857@gmail.com",
-    href: "mailto:lalrohan857@gmail.com",
+    value: "adarshsingh7580@gmail.com",
+    href: "mailto:adarshsingh7580@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 7439879892",
-    href: "tel:+91 7439879892",
+    value: "+91 8902574303",
+    href: "tel:+91 8902574303",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Howrah, West Bengal",
+    value: "Check Post, Kolkata - 711109",
     href: "#",
   },
 ];

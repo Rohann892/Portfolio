@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
@@ -7,28 +9,31 @@ import {
   Twitter,
   Download,
   ArrowUpRight,
+  Eye,
+  X,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import rohan from "../assets/rohan1.jpeg";
+import adarsh from "../assets/adarshSingh.jpeg";
 
 const skills = [
   "React",
+  "Express",
   "Next.js",
   "TypeScript",
   "Node.js",
-  "GraphQL",
-  "PostgreSQL",
   "MongoDB",
-  "Docker",
-  "AWS",
   "Vercel",
+  "Render",
   "Tailwind CSS",
   "Git",
   "GitHub Actions",
 ];
 
 export const Hero = () => {
+  const [cvOpen, setCvOpen] = useState(false);
+
   return (
+    <>
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
@@ -83,17 +88,20 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Rohan Lal — a software engineer. I build scalable,
+                Hi, I'm Adarsh Singh — a software engineer. I build scalable,
                 performant web applications that users love.
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowUpRight className="w-5 h-5" />
+              <Button size="lg" onClick={() => setCvOpen(true)}>
+                View CV <Eye className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
+              <AnimatedBorderButton
+                href="/cv.pdf"
+                download="Adarsh_Singh_CV.pdf"
+              >
                 <Download /> Download CV
               </AnimatedBorderButton>
             </div>
@@ -102,9 +110,11 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
+                { icon: Github, href: "https://github.com/Adarsh7580" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/adarsh-singh-432b7835a/",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -122,7 +132,7 @@ export const Hero = () => {
             <div className="relative max-w-md mx-auto">
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src={rohan}
+                  src={adarsh}
                   alt="Rohan lal"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
@@ -187,6 +197,56 @@ export const Hero = () => {
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
+
     </section>
+
+      {/* CV Preview Modal — rendered via portal to avoid overflow-hidden clipping */}
+      {cvOpen && createPortal(
+        <div
+          style={{ position: "fixed", inset: 0, zIndex: 9999 }}
+          className="bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setCvOpen(false)}
+        >
+          <div
+            className="glass-strong rounded-2xl w-full max-w-5xl flex flex-col overflow-hidden border border-white/10 shadow-2xl"
+            style={{ height: "90vh" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b border-white/10" style={{ background: "rgba(15,20,24,0.8)" }}>
+              <span className="font-semibold text-foreground text-lg">
+                Adarsh Singh — CV Preview
+              </span>
+              <div className="flex items-center gap-3">
+                <a
+                  href="/cv.pdf"
+                  download="Adarsh_Singh_CV.pdf"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all duration-300"
+                >
+                  <Download className="w-4 h-4" /> Download
+                </a>
+                <button
+                  onClick={() => setCvOpen(false)}
+                  className="p-2 rounded-full glass hover:bg-white/10 hover:text-white transition-all duration-300 border border-white/10"
+                  aria-label="Close Preview"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Preview Frame */}
+            <div style={{ flex: 1, overflow: "hidden", background: "#1a1a1a" }}>
+              <iframe
+                src="/cv.pdf"
+                style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+                title="CV Preview"
+              />
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
   );
 };

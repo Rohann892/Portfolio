@@ -1,28 +1,12 @@
 import { Github, ArrowUpRight } from "lucide-react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-
-const projects = [
-  {
-    title: "Animated Website",
-    description: "An animated website with smooth animations and transitions.",
-    image: "/projects/foodDelivery.jpeg",
-    tags: ["HTML", "Tailwind CSS", "JavaScript"],
-    link: "https://food-delivery-seven-livid.vercel.app/",
-    github: "https://github.com/Rohann892/Food-Delivery",
-  },
-  {
-    title: "Food Delivery Website",
-    description:
-      "A full-featured food delivery solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/animated.jpeg",
-    tags: ["ReactJs", "RazorPay", "NodeJs", "MongoDb", "NodeJs"],
-    link: "https://landing-page-for-it-company-rho.vercel.app/",
-    github: "https://github.com/Rohann892/Animated-UI-website",
-  },
-];
+import { projects } from "../data/projects";
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="Project" className="py-32 relative overflow-hidden">
       {/* Bg glows */}
@@ -52,13 +36,14 @@ const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+              onClick={() => navigate(`/project/${project.id}`)}
+              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 cursor-pointer"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src={project.image}
+                  src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -69,18 +54,26 @@ const Projects = () => {
                 />
                 {/* Overlay Links */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/project/${project.id}`);
+                    }}
+                    className="flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all text-sm font-medium"
                   >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
+                    <ArrowUpRight className="w-4 h-4" /> View Details
+                  </button>
+                  {project.github && project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -98,7 +91,7 @@ const Projects = () => {
                   />
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  {project.description}
+                  {project.shortDescription}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIdx) => (
@@ -110,6 +103,9 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                <p className="text-xs text-primary/70 font-medium mt-2">
+                  Click to view full project →
+                </p>
               </div>
             </div>
           ))}
