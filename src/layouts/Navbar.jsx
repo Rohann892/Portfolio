@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const navlinks = [
-  { href: "/about", label: "About" },
-  { href: "/Project", label: "Projects" },
-  { href: "/experience", label: "Experience" },
-  { href: "/testimonial", label: "Testimonial" },
+  { href: "about", label: "About" },
+  { href: "Project", label: "Projects" },
+  { href: "experience", label: "Experience" },
+  { href: "testimonial", label: "Testimonial" },
 ];
 
 const Navbar = () => {
@@ -15,18 +15,22 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
-  const scrollToContact = () => {
+  const scrollToSection = (id) => {
     setOpen(false);
-    // If we're not on the home page, navigate home first then scroll
-    const contact = document.getElementById("contact");
-    if (contact) {
-      contact.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
     } else {
+      // If on a sub-page (e.g. project detail), go home first then scroll
       navigate("/");
       setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 150);
     }
+  };
+
+  const scrollToContact = () => {
+    scrollToSection("contact");
   };
 
   useEffect(() => {
@@ -53,13 +57,13 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navlinks.map((link, index) => (
-              <a
-                href={link.href}
+              <button
                 key={index}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                onClick={() => scrollToSection(link.href)}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -80,14 +84,13 @@ const Navbar = () => {
         <div className="md:hidden glass-strong animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navlinks.map((link, index) => (
-              <a
-                href={link.href}
+              <button
                 key={index}
-                className="text-lg text-muted-foreground hover:text-foreground py-2"
-                onClick={() => setOpen(false)}
+                onClick={() => scrollToSection(link.href)}
+                className="text-lg text-muted-foreground hover:text-foreground py-2 text-left transition-colors"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
             <Button size="sm" onClick={scrollToContact}>
               Contact Me
